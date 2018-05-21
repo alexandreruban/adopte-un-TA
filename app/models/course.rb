@@ -1,5 +1,5 @@
 class Course < ApplicationRecord
-  belongs_to :user_id
+  belongs_to :user
   validates :title, presence: true
   validates :price, presence: true
   validates :address, presence: true
