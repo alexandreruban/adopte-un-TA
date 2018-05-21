@@ -4,13 +4,15 @@ Course.destroy_all
 
 puts "Creating 15 new users..."
 15.times do
-  User.create({
+  user = User.new({
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
     password: 'foobar',
     password_confirmation: 'foobar'
   })
+  user.remote_avatar_url = 'https://source.unsplash.com/collection/1383703'
+  user.save
 end
 
 puts "Creating new courses..."
