@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
-  before_action :set_course, only: [:show, :edit, :destroy]
+  before_action :set_course, only: [:show, :edit, :update, :destroy]
 
   def index
     @courses = Course.all
@@ -27,8 +27,7 @@ class CoursesController < ApplicationController
   end
 
   def update
-    @course = Course.new(course_params)
-    @course.user = current_user
+    @course.update(course_params)
     if @course.save
       redirect_to course_path(@course)
     else
@@ -37,7 +36,6 @@ class CoursesController < ApplicationController
   end
 
   def destroy
-    @user = @course.user
     @course.destroy
     redirect_to courses_path
   end
