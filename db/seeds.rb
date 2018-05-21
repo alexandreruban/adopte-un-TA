@@ -9,7 +9,7 @@ puts "Creating 15 new users..."
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
     password: 'foobar',
-    passord_confirmation: 'foobar'
+    password_confirmation: 'foobar'
   })
 end
 
