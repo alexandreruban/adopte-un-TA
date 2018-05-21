@@ -1,5 +1,5 @@
 class Course < ApplicationRecord
-  has_many :bookings
+  has_one :bookings
   belongs_to :user
 
   validates :title, presence: true
