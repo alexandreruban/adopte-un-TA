@@ -5,6 +5,6 @@
     <p> <%= course.price %> € </p>
   </div>
   <%= cl_image_tag course.user.avatar, class:"card-user" %>
-  <%= link_to course_path(course), class:"card-link", version: :avatar do %>
+  <%= link_to course_path(course), class:"card-link" do %>
   <% end %>
  </div>
