@@ -14,4 +14,11 @@ class BookingsController < ApplicationController
       redirect_to root_url
     end
   end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    flash[:notice] = "Booking successfully deleted"
+    redirect_to bookings_path
+  end
 end

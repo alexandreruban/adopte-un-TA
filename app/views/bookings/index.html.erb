@@ -5,7 +5,9 @@
       <%= link_to "", course_path(booking.course) %>
       <div class="kudoz-right">
         <%= cl_image_tag booking.course.user.avatar, class: "avatar" %>
-        <p><%= booking.course.title %>, with <%= booking.course.user.first_name %></p>
+        <p>
+          <%= booking.course.title %>, with <%= booking.course.user.first_name %>
+        </p>
       </div>
       <div class="kudoz-left">
         <% if booking.approved %>
@@ -16,5 +18,7 @@
         <%= booking.status %>
       </div>
     </div>
+    <%= link_to '(Cancel registration)', booking_path(booking), method: :delete,
+    class: "text-muted cancel-link" %>
   <% end %>
 </div>

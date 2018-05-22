@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :courses do
     resources :bookings, only: :create
   end
-  resources :bookings, only: :index
+  resources :bookings, only: [:index, :destroy]
 end
