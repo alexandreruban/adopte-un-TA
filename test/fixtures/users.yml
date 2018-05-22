@@ -1,4 +1,9 @@
 seb:
-  first_name: sebastien
-  last_name: saunier
-  email: seb@lewagon.com
+  first_name: seb
+  last_name: lastname
+  email: seb@lastname.com
+
+alex:
+  first_name: alex
+  last_name: lastname
+  email: alex@lastname.com

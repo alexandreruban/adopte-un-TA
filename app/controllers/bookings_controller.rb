@@ -11,7 +11,8 @@ class BookingsController < ApplicationController
     if booking.save
       redirect_to bookings_path
     else
-      redirect_to root_url
+      flash[:alert] = "An error occured"
+      redirect_to course_path(course)
     end
   end
 
