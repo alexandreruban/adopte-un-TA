@@ -1,0 +1,40 @@
+.kudoz {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 1rem;
+  margin-top: 2rem;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  border-radius: 5px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  transition: 300ms all ease;
+  &:hover {
+    margin-left: -3px;
+    margin-right: -3px;
+  }
+  .kudoz-right {
+    display: flex;
+    align-items: center;
+  }
+  a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+  }
+  p {
+    margin: 0;
+    margin-left: 1rem;
+  }
+  .fa-check {
+    color: $green;
+  }
+  .fa-times {
+    color: $red;
+  }
+}

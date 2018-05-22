@@ -23,7 +23,7 @@
             <strong><%= @course.address %></strong></p>
           <p>
             <strong><%= @course.price %> €</strong></p>
-          <%= link_to "Book", course_path(@course), class: "btn btn-lg btn-danger" %>
+          <%= link_to "Book", course_bookings_path(@course), method: :post, class: "btn btn-lg btn-danger" %>
         </div>
       </div>
     </div>
