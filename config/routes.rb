@@ -4,5 +4,9 @@ Rails.application.routes.draw do
   resources :courses do
     resources :bookings, only: :create
   end
-  resources :bookings, only: [:index, :destroy]
+  resources :bookings, only: [:index, :destroy] do
+    member do
+      post 'update_approved'
+    end
+  end
 end

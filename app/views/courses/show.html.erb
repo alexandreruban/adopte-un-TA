@@ -44,17 +44,29 @@
         </div>
       </div>
     </div>
-    <% if @other_courses.any? %>
-    <div class="row">
-      <div class="col-xs-12">
-        <h3>Other courses</h3>
-        <% @other_courses.each do |course| %>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <%= render partial: 'shared/card', locals: {
-            course: course } %>
-          </div>
-          <% end %>
-        </div>
-      </div>
+  </div>
+  <% if @same_courses.any? %>
+  <div class="row">
+    <h3>Related courses <span class="details-h3-span">for <%= @course.title %></span></h3>
+  </div>
+  <div class="row">
+    <% @same_courses.each do |course| %>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <%= render partial: 'shared/card', locals: { course: course } %>
     </div>
+    <% end %>
+  </div>
   <% end %>
+  <% if @other_courses.any? %>
+  <div class="row">
+    <h3>Other courses <span class="details-h3-span">from <%= @course.user.first_name %> <%= @course.user.last_name %></span></h3>
+  </div>
+  <div class="row">
+    <% @other_courses.each do |course| %>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <%= render partial: 'shared/card', locals: { course: course } %>
+    </div>
+    <% end %>
+  </div>
+  <% end %>
+</div>
