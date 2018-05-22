@@ -9,8 +9,14 @@
             <%= cl_image_tag @course.user.avatar, class:"details-user" %>
             <strong><%= @course.user.first_name %> <%= @course.user.last_name %></strong>
           </p>
-          <%= link_to "Edit", edit_course_path(@course), class: "btn btn-primary" %>
-          <%= link_to "Delete",  course_path(@course), method: :delete, class: "btn btn-primary" %>
+          <% if policy(@course).edit? %>
+            <%= link_to "Edit", edit_course_path(@course), class: "btn btn-primary"%>
+          <% end %>
+
+          <% if policy(@course).destroy? %>
+            <%= link_to "Delete",  course_path(@course), method: :delete, class: "btn btn-primary"%>
+          <% end %>
+
         </div>
       </div>
     </div>
@@ -27,10 +33,13 @@
           <p>
             <strong><%= @course.price %> €</strong>
           </p>
-          <% if @booking.nil? %>
-            <%= link_to "Book", course_bookings_path(@course), method: :post, class: "btn btn-lg btn-success" %>
-          <% else %>
-            <%= link_to "Cancel booking", booking_path(@booking), method: :delete, class: "btn btn-lg btn-danger" %>
+          <% if !(@course.user == current_user) %>
+              <% if @booking.nil?%>
+              <%= link_to "Book", course_bookings_path(@course), method: :post, class: "btn btn-lg btn-success" %>
+            <% else %>
+              <%= link_to "Cancel booking", booking_path(@booking), method: :delete, class: "btn btn-lg btn-danger" %>
+            <% end %>
+
           <% end %>
         </div>
       </div>

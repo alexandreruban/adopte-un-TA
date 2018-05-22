@@ -3,10 +3,11 @@ class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
 
   def index
-    @courses = Course.all
+    @courses = policy_scope(Course)
   end
 
   def show
+    authorize @course
     @same_courses = Course.where(title: @course.title).reject { |c| c == @course }
     @other_courses = Course.where(user: @course.user).reject { |c| c == @course }
     @booking = Booking.where(user_id: current_user.id, course_id: params[:id]).first
@@ -14,11 +15,13 @@ class CoursesController < ApplicationController
 
   def new
     @course = Course.new
+    authorize @course
   end
 
   def create
     @course = Course.new(course_params)
     @course.user = current_user
+    authorize @course
     if @course.save
       redirect_to course_path(@course)
     else
@@ -27,6 +30,7 @@ class CoursesController < ApplicationController
   end
 
   def edit
+    authorize @course
   end
 
   def update
@@ -39,6 +43,7 @@ class CoursesController < ApplicationController
   end
 
   def destroy
+    authorize @course
     @course.destroy
     redirect_to courses_path
   end
