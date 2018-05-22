@@ -10,7 +10,9 @@
         <%= f.input :first_name %>
         <%= f.input :last_name %>
         <%= f.input :email, required: true, autofocus: true %>
+        <%= image_tag(@user.avatar_url) if @user.avatar? %>
         <%= f.input :avatar %>
+        <%= f.hidden_field :avatar_cache %>
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
         <% end %>
