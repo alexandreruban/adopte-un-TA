@@ -1,8 +1,12 @@
 <div class="container">
   <div class="row">
-    <% @courses.each do |course| %>
-    <div class="col-xs-12 col-sm-4">
-      <%= render partial: 'shared/card', locals: { course: course } %>
+    <% @courses.each_with_index do |course, index| %>
+    <div class="col-xs-12 col-sm-4" id="main-grid">
+      <% if index === 2 %>
+        <%= render partial: 'shared/cta_card' %>
+      <% else %>
+        <%= render partial: 'shared/card', locals: { course: course } %>
+      <% end %>
     </div>
     <% end %>
   </div>
