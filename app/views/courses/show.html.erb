@@ -17,7 +17,9 @@
     <div class="col-xs-12 col-md-4">
       <div class="details details-call">
         <div class="card-body">
-          <p>from <strong><%= @course.begin_date %></strong> to <strong><%= @course.end_date %></strong></p>
+          <p>
+            from <strong><%= @course.begin_date %></strong> to <strong><%= @course.end_date %></strong>
+          </p>
           <p>
             <i class="fa fa-map-marker" aria-hidden="true"></i>
             <strong><%= @course.address %></strong>
@@ -25,7 +27,11 @@
           <p>
             <strong><%= @course.price %> €</strong>
           </p>
-          <%= link_to "Book", course_bookings_path(@course), method: :post, class: "btn btn-lg btn-danger" %>
+          <% if @booking.nil? %>
+            <%= link_to "Book", course_bookings_path(@course), method: :post, class: "btn btn-lg btn-success" %>
+          <% else %>
+            <%= link_to "Cancel booking", booking_path(@booking), method: :delete, class: "btn btn-lg btn-danger" %>
+          <% end %>
         </div>
       </div>
     </div>

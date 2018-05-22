@@ -1,7 +1,15 @@
 ruby_on_rails:
   title: ruby on rails
-  description: lear ruby on rails with le wagon
+  description: learn ruby on rails with le wagon
   price: 50
+  address: 16 villa gaudelet
+  begin_date: <%= Date.today %>
+  end_date: <%= Date.today + 1 %>
+
+python:
+  title: python
+  description: learn python with le wagon
+  price: 40
   address: 16 villa gaudelet
   begin_date: <%= Date.today %>
   end_date: <%= Date.today + 1 %>

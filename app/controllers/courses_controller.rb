@@ -9,6 +9,7 @@ class CoursesController < ApplicationController
   def show
     @same_courses = Course.where(title: @course.title).reject { |c| c == @course }
     @other_courses = Course.where(user: @course.user).reject { |c| c == @course }
+    @booking = Booking.where(user_id: current_user.id, course_id: params[:id]).first
   end
 
   def new
