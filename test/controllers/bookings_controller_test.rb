@@ -9,7 +9,11 @@ class BookingsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "a user should be able to destroy his own bookings" do
+    log_in_as(@alex)
     @booking.save
-    delete
+    assert_difference 'Booking.count', -1 do
+      @booking.destroy
+    end
   end
 end
+
