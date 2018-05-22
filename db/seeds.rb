@@ -1,4 +1,5 @@
 puts "Destroying previous data..."
+Booking.destroy_all
 User.destroy_all
 Course.destroy_all
 
@@ -16,10 +17,10 @@ puts "Creating 15 new users..."
 end
 
 puts "Creating new courses..."
-puts "3 users will have between 3 and 7 courses..."
-users_with_courses = User.take(3)
+puts "5 users will have between 1 and 3 courses..."
+users_with_courses = User.take(5)
 users_with_courses.each do |user|
-  (3..7).to_a.sample.times do
+  (1..3).to_a.sample.times do
     user.courses.create({
       title: Faker::ProgrammingLanguage.name,
       description: Faker::Lorem.paragraph,
