@@ -23,9 +23,9 @@ class BookingsController < ApplicationController
     redirect_to bookings_path
   end
 
-  def approve_student
+  def update_approved
     booking = Booking.find(params[:id])
-    booking.update(approved: true)
+    booking.approved ? booking.update(approved: false) : booking.update(approved: true)
     redirect_to bookings_path
   end
 end

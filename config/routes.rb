@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:index, :destroy] do
     member do
-      post 'approve_student'
+      post 'update_approved'
     end
   end
 end

@@ -12,8 +12,13 @@
         </p>
       </div>
       <div class="kudoz-left">
-        <%= button_to 'Approve student', approve_student_booking_path(booking), method: :post,
-        class: "btn btn-success" %>
+        <% if booking.approved? %>
+          <%= button_to 'Remove student', update_approved_booking_path(booking), method: :post,
+          class: "btn btn-danger" %>
+        <% else %>
+          <%= button_to 'Approve student', update_approved_booking_path(booking), method: :post,
+          class: "btn btn-success" %>
+        <% end %>
       </div>
     </div>
   <% end %>
