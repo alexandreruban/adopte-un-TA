@@ -1,0 +1,25 @@
+<h1 class="text-center">My courses (<%= @courses.size %>)</h1>
+
+<% @courses.each do |course| %>
+  <h2><%= course.title %></h2>
+  <p>Candidates list</p>
+  <% course.bookings.each do |booking| %>
+    <div class="kudoz">
+      <div class="kudoz-right">
+        <%= cl_image_tag booking.user.avatar, class: "avatar" %>
+        <p>
+          <%= booking.user.first_name %>, <%= booking.user.email %>
+        </p>
+      </div>
+      <div class="kudoz-left">
+        <% if booking.approved? %>
+          <%= button_to 'Remove student', update_approved_booking_path(booking), method: :post,
+          class: "btn btn-danger" %>
+        <% else %>
+          <%= button_to 'Approve student', update_approved_booking_path(booking), method: :post,
+          class: "btn btn-success" %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

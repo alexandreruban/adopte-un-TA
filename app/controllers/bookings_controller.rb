@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def index
     @bookings = Booking.where(user: current_user)
+    @courses = Course.where(user: current_user)
   end
 
   def create
@@ -20,6 +21,12 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.destroy
     flash[:notice] = "Booking successfully deleted"
+    redirect_to bookings_path
+  end
+
+  def update_approved
+    booking = Booking.find(params[:id])
+    booking.update(approved: !booking.approved)
     redirect_to bookings_path
   end
 end
