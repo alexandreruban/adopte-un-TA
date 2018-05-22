@@ -34,4 +34,17 @@ class BookingsControllerTest < ActionDispatch::IntegrationTest
       post course_bookings_path(@ruby_on_rails)
     end
   end
+
+  test "a non course owner should not be able to accept a user" do
+    sign_in @thanh
+    assert_raises Pundit::AuthorizationNotPerformedError do
+      post update_approved_booking_path(@booking)
+    end
+  end
+
+  test "a course owner should be able to accept a user" do
+    sign_in @seb
+    post update_approved_booking_path(@booking)
+    assert @booking.approved
+  end
 end
