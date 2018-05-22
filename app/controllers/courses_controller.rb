@@ -7,6 +7,7 @@ class CoursesController < ApplicationController
   end
 
   def show
+    @other_courses = Course.where(user: @course.user).reject { |c| c == @course }
   end
 
   def new
