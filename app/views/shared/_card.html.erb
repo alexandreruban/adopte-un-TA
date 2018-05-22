@@ -1,10 +1,12 @@
-<div class="card">
-  <div class="card-category"> <%= course.user.first_name %> <%= course.user.last_name%> </div>
-  <div class="card-description">
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "course.jpeg" %>');">
+  <div class="card-cartridge-user">
+    <span><%= course.user.first_name %> <%= course.user.last_name%><span><%= cl_image_tag course.user.avatar, class:"card-user" %>
+  </div>
+  <div class="card-title">
     <h2> <%= course.title %> </h2>
     <p> <%= course.price %> € </p>
   </div>
-  <%= cl_image_tag course.user.avatar, class:"card-user" %>
+
   <%= link_to course_path(course), class:"card-link" do %>
   <% end %>
- </div>
+</div>
