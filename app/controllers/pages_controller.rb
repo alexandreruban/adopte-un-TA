@@ -3,5 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @courses = Course.all.sample(3)
+    @courses = policy_scope(Course)
+
   end
 end
