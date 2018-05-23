@@ -1,13 +1,14 @@
 // Import your components CSS files here.
+@import "html_body";
 @import "alert";
-@import "navbar";
+@import "navbar_large";
+@import "navbar_small";
 @import "card";
 @import "banner";
 @import "footer";
 @import "buttons";
 @import "kudoz";
 @import "avatar";
-@import "html_body";
 @import "details";
 @import "wrap";
 @import "form-container";

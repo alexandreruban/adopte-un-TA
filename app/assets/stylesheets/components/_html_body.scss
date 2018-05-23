@@ -1,6 +1,12 @@
-.content {
-  min-height: calc(100vh - 130px);
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
-.footer {
-  height: 50px;
+
+.page-wrapper {
+  min-height: 100vh;
+  padding-top: 70px;
+  padding-bottom: 50px;
 }
