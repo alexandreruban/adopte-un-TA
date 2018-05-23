@@ -1,0 +1,33 @@
+<div class="dash-sidebar">
+  <div class="dash-profile">
+    <div>
+      <%= cl_image_tag current_user.avatar, class: "avatar-large" %>
+    </div>
+    <p><%= current_user.first_name %>, <%= current_user.last_name %></p>
+    <p><%= current_user.email %></p>
+    <%= link_to edit_user_registration_path(current_user), class: "dash-link" do %>
+      <i class="fas fa-edit"></i> Edit profile
+    <% end %>
+  </div>
+  <hr>
+  <div class="dash-actions">
+    <div class="action-link">
+      <%= link_to '', edit_user_registration_path(current_user), class: "absolute-link" %>
+      <span class="active"><i class="fas fa-edit"></i> My dashbord</span>
+    </div>
+    <div class="action-link">
+      <%= link_to '', edit_user_registration_path(current_user), class: "absolute-link" %>
+      <span><i class="fas fa-edit"></i> My bookings</span>
+    </div>
+    <div class="action-link">
+      <%= link_to '', edit_user_registration_path(current_user), class: "absolute-link" %>
+      <span><i class="fas fa-edit"></i> My courses</span>
+    </div>
+  </div>
+  <hr>
+  <div class="dash-logout">
+    <%= link_to edit_user_registration_path(current_user), class: "dash-link text-center" do %>
+      <i class="fas fa-sign-out-alt"></i> Logout
+    <% end %>
+  </div>
+</div>

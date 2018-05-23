@@ -1,19 +1,20 @@
-<div class="container">
-  <% if @bookings.empty? %>
-    <h1 class="text-center">You have no bookings yet!</h1>
-    <p class="text-center">
-      Please go to our <%= link_to 'courses list', courses_path %> to start learning new skills!
-    </p>
-  <% else %>
-    <%= render 'bookings' %>
-  <% end %>
+<div class="dashboard">
+  <%= render "sidebar" %>
+  <div class="dash-container">
+    <div class="courses-taken dash-card">
+      <h3>Courses taken</h3>
+      <p class="text-center"><%= @courses_taken %></p>
+    </div>
+    <div class="total-revenue dash-card">
+      <h3>Total revenue</h3>
+      <p class="text-center"><%= @total_revenue %></p>
+    </div>
+    <div class="courses-given dash-card">
+      <h3>Courses given</h3>
+      <p class="text-center"><%= @courses_given %></p>
+    </div>
+    <div class="dash-graph dash-card">
 
-  <% if @courses.empty? %>
-    <h1 class="text-center">You have no courses yet!</h1>
-    <p class="text-center">
-      Please create a <%= link_to 'new course', new_course_path %> to start teaching new skills!
-    </p>
-  <% else %>
-    <%= render 'courses' %>
-  <% end %>
+    </div>
+  </div>
 </div>
