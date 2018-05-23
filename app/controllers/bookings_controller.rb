@@ -4,9 +4,15 @@ class BookingsController < ApplicationController
     @bookings = policy_scope(Booking)
     @courses_given = Course.where(user: current_user).count
     @courses_taken = Booking.where(user: current_user, approved: true).count
-    total_revenue = Course.joins(:user, :bookings)
+    @total_revenue = Course.joins(:user, :bookings)
     .where("users.id = ? AND bookings.approved = ?", current_user.id, true)
-    .sum("courses.price")
+    .sum("courses.price").to_i
+  end
+
+  def my_bookings
+  end
+
+  def my_courses
   end
 
   def create

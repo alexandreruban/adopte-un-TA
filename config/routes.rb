@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   resources :bookings, only: [:index, :destroy] do
     member do
       post 'update_approved'
-      get 'dashboard'
+      get 'my_bookings'
+      get 'my_courses'
     end
   end
 end
