@@ -1,24 +1,31 @@
 .wrap {
   display: flex;
   align-items: center;
-  background: #FAFAFA;
+  background: $orange;
   height: 300px;
   text-align:center;
   background-size: cover !important;
+  color: white;
 
+}
+
+.wrap-margin {
+  margin-bottom: 50px;
 }
 
 #left, #right, #center {
   margin: 0 35px 0 35px;
 }
 
-h3 {
+.wrap h3 {
   font-weight: bold;
 }
 
-h2 {
-  margin: 50px 0 30px 100px;
+
+.landing-h2 {
+  margin: 40px 30px 30px 30px;
   text-align: center;
 }
+
 
 
