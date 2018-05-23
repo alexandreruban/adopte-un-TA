@@ -5,7 +5,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.course.user == user
+    record.user == user
   end
 
   def update?
@@ -13,7 +13,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def update_approved?
-    update?
+    record.course.user == user
   end
 
   class Scope < Scope
