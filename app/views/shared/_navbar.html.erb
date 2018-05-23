@@ -1,34 +1,47 @@
 <div class='navigation-wrapper-large hidden-xs hidden-sm'>
+
+
+
   <div class='navigation-right'>
     <%= link_to root_url, class: 'navigation-logo' do %>
     <%= image_tag 'logolewagon.png' %>
     <% end %>
   </div>
+
+  <% if user_signed_in? %>
+
   <div class='navigation-left-large'>
     <%= link_to 'Courses', courses_url, class: 'navigation-link' %>
     <%= link_to 'Dashboard', bookings_url, class: 'navigation-link' %>
     <%= link_to 'Create a course', new_course_url, class: 'navigation-link' %>
     <div class="drop-wrapper avatar-link">
       <% if current_user && current_user.avatar.url %>
-        <%= cl_image_tag current_user.avatar, class: 'avatar', id: 'avatar-menu' %>
+      <%= cl_image_tag current_user.avatar, class: 'avatar', id: 'avatar-menu' %>
       <% else %>
-        <%= image_tag 'avatar-default.png', class: 'avatar', id: 'avatar-menu' %>
+      <%= image_tag 'avatar-default.png', class: 'avatar', id: 'avatar-menu' %>
       <% end %>
       <div class='drop-menu'>
         <div>
           <%= link_to edit_user_registration_url, class: 'navigation-link' do %>
-            <i class="fas fa-user-edit"></i> Edit profile
+          <i class="fas fa-user-edit"></i> Edit profile
           <% end %>
         </div>
         <div>
           <%= link_to destroy_user_session_url, method: :delete, class: 'navigation-link' do %>
-            <i class="fas fa-sign-out-alt"></i> Log out
+          <i class="fas fa-sign-out-alt"></i> Log out
           <% end %>
         </div>
       </div>
     </div>
   </div>
+
+  <% else %>
+    <!-- Login link (when logged out) -->
+    <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <% end %>
 </div>
+
+
 <div class='navigation-wrapper-small hidden-md hidden-lg'>
   <div class='navigation-small-right'>
     <%= link_to root_url, class: 'navigation-logo' do %>
@@ -50,12 +63,12 @@
     </div>
     <div class="padding-div">
       <%= link_to edit_user_registration_url, class: 'navigation-link-small' do %>
-        <i class="fas fa-user-edit"></i> Edit profile
+      <i class="fas fa-user-edit"></i> Edit profile
       <% end %>
     </div>
     <div class="padding-div">
       <%= link_to destroy_user_session_url, method: :delete, class: 'navigation-link-small' do %>
-        <i class="fas fa-sign-out-alt"></i> Log out
+      <i class="fas fa-sign-out-alt"></i> Log out
       <% end %>
     </div>
   </div>
