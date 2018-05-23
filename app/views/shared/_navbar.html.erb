@@ -9,7 +9,7 @@
     <%= link_to 'Dashboard', bookings_url, class: 'navigation-link' %>
     <%= link_to 'Create a course', new_course_url, class: 'navigation-link' %>
     <div class="drop-wrapper avatar-link">
-      <% if current_user.avatar.url %>
+      <% if current_user && current_user.avatar.url %>
         <%= cl_image_tag current_user.avatar, class: 'avatar', id: 'avatar-menu' %>
       <% else %>
         <%= image_tag 'avatar-default.png', class: 'avatar', id: 'avatar-menu' %>
