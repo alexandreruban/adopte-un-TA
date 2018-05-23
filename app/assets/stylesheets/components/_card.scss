@@ -1,11 +1,59 @@
+.course-card {
+  height: 280px;
+  margin: 2px;
+  border: solid 1px black;
+}
+.course-card-img-top {
+  height: 140px;
+  background-size: cover;
+}
+.course-card-body {
+  height: 140px;
+  background-color: white;
+}
+.course-card-body .cardridge {
+  display: flex;
+  height: 92px;
+  justify-content: space-between;
+  padding: 0px 24px;
+  align-items: center;
+}
+.course-card-body .left-cardridge h6 {
+  color: black;
+  font-weight: 900;
+  font-size: 24px;
+  margin: 0px;
+}
+.course-card-body .left-cardridge p {
+  color: $gray;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0px;
+}
+.course-card .button {
+  display: flex;
+  height:48px;
+  width: 100%;
+  color: white;
+  background-color: $orange;
+  justify-content: center;
+  align-items: center;
+  line-height: 10px;
+  font-family: $body-font;
+  font-weight: 700;
+  text-decoration: none;
+}
+.course-card .button:hover {
+  opacity: 0.8;
+}
+
 .card {
-  height: 175px;
+  height: 280px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: white;
   position: relative;
-  margin: 12px;
 }
 .card-user {
   width: 40px;
