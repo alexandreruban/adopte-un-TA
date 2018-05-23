@@ -21,7 +21,7 @@
           <% end %>
         </div>
         <div>
-          <%= link_to destroy_user_session_url, class: 'navigation-link' do %>
+          <%= link_to destroy_user_session_url, method: :delete, class: 'navigation-link' do %>
             <i class="fas fa-sign-out-alt"></i> Log out
           <% end %>
         </div>
@@ -54,7 +54,7 @@
       <% end %>
     </div>
     <div class="padding-div">
-      <%= link_to destroy_user_session_url, class: 'navigation-link-small' do %>
+      <%= link_to destroy_user_session_url, method: :delete, class: 'navigation-link-small' do %>
         <i class="fas fa-sign-out-alt"></i> Log out
       <% end %>
     </div>
