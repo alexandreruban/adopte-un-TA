@@ -5,6 +5,7 @@ ruby_on_rails:
   address: 16 villa gaudelet
   begin_date: <%= Date.today %>
   end_date: <%= Date.today + 1 %>
+  user: users(:seb)
 
 python:
   title: python
@@ -13,3 +14,4 @@ python:
   address: 16 villa gaudelet
   begin_date: <%= Date.today %>
   end_date: <%= Date.today + 1 %>
+  user: users(:seb)

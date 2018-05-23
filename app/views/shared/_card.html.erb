@@ -1,12 +1,16 @@
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "course.jpg" %>');">
-  <div class="card-cartridge-user">
-    <span><%= course.user.first_name %> <%= course.user.last_name%><span><%= cl_image_tag course.user.avatar, class:"card-user" %>
+<div class="course-card">
+  <div class="course-card-img-top" style="background-image: url('<%= asset_path "course.jpeg"%>')">
   </div>
-  <div class="card-title">
-    <h2> <%= course.title %> </h2>
-    <p> <%= course.price %> € </p>
+  <div class="course-card-body">
+    <div class="cardridge">
+      <div class="left-cardridge">
+        <h6><%= course.title %></h6>
+        <p><%= course.user.first_name %> <%= course.user.last_name%>
+      </div>
+      <div class="rigth-cardridge">
+        <p> <%= course.price %> € </p>
+      </div>
+    </div>
+    <%= link_to "BOOK ME", course_path(course), class:"button" %>
   </div>
-
-  <%= link_to course_path(course), class:"card-link" do %>
-  <% end %>
 </div>
