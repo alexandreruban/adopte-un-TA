@@ -64,7 +64,7 @@ users_attributes = [
   },
   {
     first_name:'Floriane',
-    last_name:'Perrin De Brichambaut',
+    last_name:'Perrin',
     email:'floperrindb@gmail.com',
     avatar:'image/upload/v1527073059/35752299.jpg',
     password: 'foobar'
@@ -99,23 +99,28 @@ users_attributes = [
   },
 ]
 
-User.create!(users_attributes)
-p 'Users: done'
+# User.create!(users_attributes)
+# p 'Users: done'
+urls = ['http://res.cloudinary.com/de7jtv0ha/image/upload/v1527072488/9978111.jpg',
+        'http://res.cloudinary.com/de7jtv0ha/image/upload/v1527072497/11377783.jpg',
+        'http://res.cloudinary.com/de7jtv0ha/image/upload/v1527072511/pbqsfxjaoclnqia1xfhz.jpg',
+        'http://res.cloudinary.com/de7jtv0ha/image/upload/v1527072523/31478848.jpg',
+        'http://res.cloudinary.com/de7jtv0ha/image/upload/v1527072474/414418.jpg',
+        'http://res.cloudinary.com/de7jtv0ha/image/upload/v1527072452/ezdn5qfm3tzmchsjpn49.jpg',
+        'http://res.cloudinary.com/de7jtv0ha/image/upload/v1527072465/rrl0etzxghraeswlqd4d.jpg',
+        'http://res.cloudinary.com/de7jtv0ha/image/upload/v1527072435/ffvqsq2rvcxw5zwolcc3.jpg',
+        'http://res.cloudinary.com/de7jtv0ha/image/upload/v1527073059/35752299.jpg',
+        'http://res.cloudinary.com/de7jtv0ha/image/upload/v1527073105/wq5uwxdpmrwvo0vbr0bp.jpg',
+        'http://res.cloudinary.com/de7jtv0ha/image/upload/v1527073140/29280478.jpg',
+        'http://res.cloudinary.com/de7jtv0ha/image/upload/v1527073345/35493058.jpg',
+        'http://res.cloudinary.com/de7jtv0ha/image/upload/v1527073383/33979976.jpg',
+        ]
 
-
-
-# puts "Creating 15 new users..."
-# 15.times do
-#   user = User.new({
-#     first_name: Faker::Name.first_name,
-#     last_name: Faker::Name.last_name,
-#     email: Faker::Internet.email,
-#     password: 'foobar',
-#     password_confirmation: 'foobar'
-#   })
-#   user.remote_avatar_url = 'https://source.unsplash.com/collection/1383703'
-#   user.save
-# end
+users_attributes.each_with_index do |user, index|
+  user = User.new(user)
+  user.remote_avatar_url = urls[index]
+  user.save!
+end
 
 puts "Creating new courses..."
 puts "5 users will have between 1 and 3 courses..."
@@ -126,7 +131,7 @@ users_with_courses.each do |user|
       title: Faker::ProgrammingLanguage.name,
       description: Faker::Lorem.paragraph,
       address: Faker::Address.street_address,
-      price: 30,
+      price: rand(30..50),
       begin_date: Date.today,
       end_date: Date.today
     })
