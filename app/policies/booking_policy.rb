@@ -12,6 +12,10 @@ class BookingPolicy < ApplicationPolicy
     destroy?
   end
 
+  def my_bookings?
+    true # To be changed
+  end
+
   def update_approved?
     record.course.user == user
   end

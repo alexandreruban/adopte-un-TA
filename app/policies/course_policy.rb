@@ -28,6 +28,9 @@ class CoursePolicy < ApplicationPolicy
     record.user == user
   end
 
+  def my_courses?
+    true # To be changed
+  end
 
   class Scope < Scope
     def resolve

@@ -10,9 +10,13 @@ class BookingsController < ApplicationController
   end
 
   def my_bookings
+    @bookings = Booking.where(user: current_user)
+    authorize @bookings
   end
 
   def my_courses
+    @courses = Course.where(user: current_user)
+    authorize @courses
   end
 
   def create
@@ -41,10 +45,6 @@ class BookingsController < ApplicationController
     booking = Booking.find(params[:id])
     authorize booking
     booking.update(approved: !booking.approved)
-    redirect_to bookings_path
-  end
-
-  def dashboard
-
+    redirect_to my_courses_bookings_path
   end
 end
