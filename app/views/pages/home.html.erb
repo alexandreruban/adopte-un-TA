@@ -7,13 +7,29 @@
   </div>
 </div>
 
-<div class="container">
-  <div class="row">
-    <% @courses.each do |course| %>
-    <div class="col-xs-12 col-sm-4">
-      <%= render partial: 'shared/card', locals: {
-        course: course } %>
+  <h2> Adopt a qualified teacher </h2>
+  <div class="wrap">
+    <div id="left" class="col-xs-12 col-sm-4">
+      <h3>SEARCH</h3>
+      <p>Search for programming language classes among lot of language : html, css, ruby, cobol, javascipt, java...</p>
     </div>
-    <% end %>
+    <div id="right" class="col-xs-12 col-sm-4">
+      <h3>HIRE</h3>
+      <p>Browse profiles, batchs, reviews, and send message to top teachers close to your location.</p>
+    </div>
+    <div id="center" class="col-xs-12 col-sm-4">
+      <h3>WORK</h3>
+      <p>A TA comes to your home and helps you to better understand the code, corrects your exercises..</p>
+    </div>
   </div>
+
+<div class="container">
+<div class="row">
+  <% @courses.each do |course| %>
+  <div class="col-xs-12 col-sm-4">
+    <%= render partial: 'shared/card', locals: {
+      course: course } %>
+  </div>
+  <% end %>
+</div>
 </div>
