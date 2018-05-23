@@ -1,79 +1,37 @@
-<div class="navbar-wagon">
-  <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-  <%= image_tag "logo.png", height: 50 %>
-  <% end %>
-
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-    <% if user_signed_in? %>
-
-    <!-- Links when logged in -->
-    <%= link_to "Create a course", new_course_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "Courses", courses_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "Dashboard", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
-    <!-- Avatar with dropdown menu -->
-    <div class="navbar-wagon-item">
-      <div class="dropdown">
-        <% if current_user.avatar.url %>
-        <%= cl_image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-        <% else %>
-        <%= image_tag "avatar-default.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-        <% end %>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li>
-            <%= link_to edit_user_registration_path do %>
-            <i class="fas fa-user-edit"></i> Update profile
-            <% end %>
-          </li>
-          <li>
-            <%= link_to destroy_user_session_path, method: :delete do %>
-            <i class="fas fa-sign-out-alt"></i> Log Out
-            <% end %>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <% else %>
-    <!-- Login link (when logged out) -->
-    <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+<div class='navigation-wrapper'>
+  <div class='navigation-right'>
+    <%= link_to root_url, class: 'navigation-logo' do %>
+    <%= image_tag 'logo.png' %>
     <% end %>
   </div>
+  <!-- Large -->
+  <div class='navigation-left-large hidden-xs hidden-sm'>
+    <%= link_to 'Courses', courses_url, class: 'navigation-link' %>
+    <%= link_to 'Dashboard', bookings_url, class: 'navigation-link' %>
+    <%= link_to 'Create a course', new_course_url, class: 'navigation-link' %>
+    <div class="drop-wrapper avatar-link">
+      <% if current_user.avatar.url %>
+        <%= cl_image_tag current_user.avatar, class: 'avatar', id: 'avatar-menu' %>
+      <% else %>
+        <%= image_tag 'avatar-default.png', class: 'avatar', id: 'avatar-menu' %>
+      <% end %>
+      <div class='drop-menu'>
+        <div>
+          <%= link_to edit_user_registration_url, class: 'navigation-link' do %>
+            <i class="fas fa-user-edit"></i> Edit profile
+          <% end %>
+        </div>
+        <div>
+          <%= link_to destroy_user_session_url, class: 'navigation-link' do %>
+            <i class="fas fa-sign-out-alt"></i> Log out
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-      <li>
-        <%= link_to new_course_path do %>
-        <i class="fas fa-plus"></i> <%= t(".new_course", default:"Create a course") %>
-        <% end %>
-      </li>
-      <li>
-        <%= link_to courses_path do %>
-        <i class="fas fa-boxes"></i> <%= t(".course", default:"Courses") %>
-        <% end %>
-      </li>
-      <li>
-        <%= link_to bookings_path do %>
-        <i class="fas fa-chalkboard-teacher"></i> <%= t(".dashboard", default: "Dashboard") %>
-        <% end %>
-      </li>
-      <li>
-        <%= link_to edit_user_registration_path do %>
-        <i class="fas fa-user-edit"></i>  <%= t(".update_profile", default: "Update profile") %>
-        <% end %>
-      </li>
-      <li>
-        <%= link_to destroy_user_session_path, method: :delete do %>
-        <<i class="fas fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Log out") %>
-        <% end %>
-      </li>
-    </ul>
+  <!-- Small -->
+  <div class='navigation-small hidden-md hidden-lg'>
+    <i class="fas fa-bars toggler-bar"></i>
   </div>
 </div>
-</div>
-
