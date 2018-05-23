@@ -8,8 +8,11 @@ function addClickAvatar() {
 
 function togglerNav() {
   const toggleBar = document.querySelector('.toggler-bar');
+  const navigation= document.querySelector('.navigation-wrapper-small');
+  const linksSmall = document.querySelector('.links-small');
   toggleBar.addEventListener('click', (event) => {
-    console.log('coucu')
+    navigation.classList.toggle('full');
+    linksSmall.classList.toggle('links-small-visible');
   })
 }
 

@@ -1,0 +1,51 @@
+.navigation-wrapper-small {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background-color: white;
+  transition: 300ms ease all;
+  z-index: 1000000;
+}
+.navigation-small-right {
+  position: absolute;
+  left: 3rem;
+  top: 10px;
+}
+.toggler-bar {
+  position: absolute;
+  right: 3rem;
+  top: 20px;
+  bottom: 20px;
+  font-size: 30px;
+}
+.full {
+  height: 100vh;
+  background: linear-gradient(135deg, $red, $orange);
+  a:hover {
+    color: white;
+  }
+}
+.links-small {
+  display: none;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 70px;
+  text-align: center;
+}
+.links-small-visible {
+  display: block;
+}
+.navigation-link-small {
+  color: $gray-dark;
+  transition: 300ms all ease;
+  padding: 1rem;
+}
+.navigation-link-small:hover {
+  color: $orange;
+  text-decoration: none;
+}
+.padding-div {
+  margin-top: 2rem;
+}

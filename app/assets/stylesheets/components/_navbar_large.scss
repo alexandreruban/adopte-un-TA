@@ -1,4 +1,4 @@
-.navigation-wrapper {
+.navigation-wrapper-large {
   height: 70px;
   background-color: white;
   padding: 0 3rem;
@@ -49,6 +49,6 @@
 .drop-menu-visible {
   display: block;
 }
-.toggler-bar {
-  font-size: 30px;
+.small-links {
+  display: none;
 }

@@ -1,11 +1,10 @@
-<div class='navigation-wrapper'>
+<div class='navigation-wrapper-large hidden-xs hidden-sm'>
   <div class='navigation-right'>
     <%= link_to root_url, class: 'navigation-logo' do %>
-    <%= image_tag 'logo.png' %>
+    <%= image_tag 'logolewagon.png' %>
     <% end %>
   </div>
-  <!-- Large -->
-  <div class='navigation-left-large hidden-xs hidden-sm'>
+  <div class='navigation-left-large'>
     <%= link_to 'Courses', courses_url, class: 'navigation-link' %>
     <%= link_to 'Dashboard', bookings_url, class: 'navigation-link' %>
     <%= link_to 'Create a course', new_course_url, class: 'navigation-link' %>
@@ -29,9 +28,35 @@
       </div>
     </div>
   </div>
-
-  <!-- Small -->
-  <div class='navigation-small hidden-md hidden-lg'>
+</div>
+<div class='navigation-wrapper-small hidden-md hidden-lg'>
+  <div class='navigation-small-right'>
+    <%= link_to root_url, class: 'navigation-logo' do %>
+    <%= image_tag 'logolewagon.png' %>
+    <% end %>
+  </div>
+  <div class='navigation-small-left'>
     <i class="fas fa-bars toggler-bar"></i>
+  </div>
+  <div class="links-small">
+    <div class="padding-div">
+      <%= link_to 'Courses', courses_url, class: 'navigation-link-small' %>
+    </div>
+    <div class="padding-div">
+      <%= link_to 'Dashboard', bookings_url, class: 'navigation-link-small' %>
+    </div>
+    <div class="padding-div">
+      <%= link_to 'Create a course', new_course_url, class: 'navigation-link-small' %>
+    </div>
+    <div class="padding-div">
+      <%= link_to edit_user_registration_url, class: 'navigation-link-small' do %>
+        <i class="fas fa-user-edit"></i> Edit profile
+      <% end %>
+    </div>
+    <div class="padding-div">
+      <%= link_to destroy_user_session_url, class: 'navigation-link-small' do %>
+        <i class="fas fa-sign-out-alt"></i> Log out
+      <% end %>
+    </div>
   </div>
 </div>
