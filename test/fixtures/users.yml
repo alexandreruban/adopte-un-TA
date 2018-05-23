@@ -7,3 +7,8 @@ alex:
   first_name: alex
   last_name: lastname
   email: alex@lastname.com
+
+thanh:
+  first_name: thanh
+  last_name: lastname
+  email: thanh@lastname.com
