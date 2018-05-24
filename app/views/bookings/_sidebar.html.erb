@@ -13,20 +13,20 @@
   <div class="dash-actions">
     <div class="action-link">
       <%= link_to '', bookings_path, class: "absolute-link" %>
-      <span class="active"><i class="fas fa-edit"></i> My dashbord</span>
+      <span class="active"><i class="fas fa-chart-bar"></i> My dashbord</span>
     </div>
     <div class="action-link">
       <%= link_to '', my_bookings_bookings_path, class: "absolute-link" %>
-      <span><i class="fas fa-edit"></i> My bookings</span>
+      <span><i class="fas fa-chalkboard-teacher"></i> My bookings</span>
     </div>
     <div class="action-link">
       <%= link_to '', my_courses_bookings_path, class: "absolute-link" %>
-      <span><i class="fas fa-edit"></i> My courses</span>
+      <span><i class="fas fa-book"></i> My courses</span>
     </div>
   </div>
   <hr>
   <div class="dash-logout">
-    <%= link_to edit_user_registration_path(current_user), class: "dash-link text-center" do %>
+    <%= link_to destroy_user_session_path, class: "dash-link text-center" do %>
       <i class="fas fa-sign-out-alt"></i> Logout
     <% end %>
   </div>
