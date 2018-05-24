@@ -14,6 +14,11 @@ class BookingsControllerTest < ActionDispatch::IntegrationTest
     assert @booking.valid?
   end
 
+  test "as a non logged in user I can't book a course" do
+    post course_bookings_path(@ruby_on_rails)
+    assert_redirected_to new_user_session_path
+  end
+
   test "a user should be able to destroy his own bookings" do
     sign_in @alex
     assert_difference 'Booking.count', -1 do
@@ -45,5 +50,20 @@ class BookingsControllerTest < ActionDispatch::IntegrationTest
     sign_in @seb
     post update_approved_booking_url(@booking)
     assert @booking.reload.approved
+  end
+
+  test "a non loged in user should not be able to see a dashboard" do
+    get bookings_path
+    assert_redirected_to new_user_session_path
+  end
+
+  test "a non loged in user should not be able to see bookings dashboard" do
+    get my_bookings_bookings_path
+    assert_redirected_to new_user_session_path
+  end
+
+  test "a non loged in user should not be able to see courses dashboard" do
+    get my_courses_bookings_path
+    assert_redirected_to new_user_session_path
   end
 end

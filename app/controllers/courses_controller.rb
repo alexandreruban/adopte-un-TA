@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :index ]
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_course, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -10,7 +10,7 @@ class CoursesController < ApplicationController
     authorize @course
     @same_courses = Course.where(title: @course.title).reject { |c| c == @course }
     @other_courses = Course.where(user: @course.user).reject { |c| c == @course }
-    @booking = Booking.where(user_id: current_user.id, course_id: params[:id]).first
+    @booking = Booking.where(user_id: current_user.id, course_id: params[:id]).first if current_user
     @markers = [ {
       lat: @course.latitude,
       lng: @course.longitude,
