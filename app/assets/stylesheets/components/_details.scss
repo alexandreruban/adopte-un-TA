@@ -3,22 +3,30 @@
   margin: 12px 0px;
   padding: 20px;
   background: white;
-  border-radius: 2px;
-  box-shadow: 1px 1px 4px #E6E6E6;
+  border-radius: 4px;
+  box-shadow: 9px 9px 6px #ccc;
+
 }
-.detaiks-description {
+
+.details-description {
   background: white;
 }
+
 .details-user {
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
 .details-call {
-  background: #ffaa5b;
+  background: white;
   text-align: center;
 }
 
 .details-h3-span {
   font-size:16px;
 }
+
+
+
+/* haut | droit | bas | gauche */
+// padding: 5px 1em 0 2em;
