@@ -2,16 +2,11 @@ require 'test_helper'
 
 class BookingTest < ActiveSupport::TestCase
   def setup
-    @alex = users(:alex)
-    @seb = users(:seb)
-    @ruby_on_rails = courses(:ruby_on_rails)
-    @booking = Booking.new(user_id: @alex.id, course_id: @ruby_on_rails.id)
+    @booking = bookings(:booking)
   end
 
   test "booking should be valid" do
     assert @booking.valid?
-    @booking.save
-    assert_equal @booking.reload.approved, false
   end
 
   test "booking should have a user_id" do
