@@ -23,8 +23,12 @@ gem 'cloudinary'
 gem 'faker'
 gem 'omniauth-github'
 
+
+
 group :development do
   gem 'web-console', '>= 3.3.0'
+  gem "sinatra"
+  gem "sinatra-contrib"
 end
 
 group :development, :test do
