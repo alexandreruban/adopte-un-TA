@@ -8,5 +8,9 @@ Rails.application.routes.draw do
     member do
       post 'update_approved'
     end
+    collection do
+      get 'my_bookings'
+      get 'my_courses'
+    end
   end
 end
