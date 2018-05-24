@@ -2,19 +2,25 @@
   <%= render "sidebar" %>
   <div class="dash-container">
     <div class="courses-taken dash-card">
-      <i class="fas fa-user-astronaut card-icon"></i>
-      <h3>Courses taken</h3>
-      <p><%= @courses_taken %></p>
+      <div class="dash-card-content">
+        <i class="fas fa-graduation-cap card-icon"></i>
+        <p class="metrics"><%= @courses_taken %></p>
+        <h3>Courses taken</h3>
+      </div>
     </div>
     <div class="total-revenue dash-card">
-      <i class="fas fa-user-astronaut card-icon"></i>
-      <h3>Total revenue</h3>
-      <p><%= @total_revenue %></p>
+      <div class="dash-card-content">
+        <i class="far fa-money-bill-alt card-icon"></i>
+        <p class="metrics"><%= @total_revenue %> €</p>
+        <h3>Total revenue</h3>
+      </div>
     </div>
     <div class="courses-given dash-card">
-      <i class="fas fa-user-astronaut card-icon"></i>
-      <h3>Courses given</h3>
-      <p><%= @courses_given %></p>
+      <div class="dash-card-content">
+        <i class="fas fa-chalkboard card-icon"></i>
+        <p class="metrics"><%= @courses_given %></p>
+        <h3>Courses given</h3>
+      </div>
     </div>
     <div class="dash-graph dash-card">
 
