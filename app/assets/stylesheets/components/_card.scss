@@ -110,16 +110,22 @@
 }
 .card-category {
   position: absolute;
-  top: 10px;
+  top: 14px;
   left: 10px;
-  font-size: 15px;
+  font-size: 23px;
   text-transform: uppercase;
+  font-weight: bold;
+
 }
 .card-description {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: -4px;
+  left: 35px;
+  margin: 10px;
 }
+
+
+
 .card-description h2 {
   font-size: 24px;
 }
@@ -143,6 +149,8 @@
 }
 
 .cta {
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3));
+  // background-image: linear-gradient(rgba(0,0,0,0.1), rgba(255,127,80,0.5));
+  background-color: $orange;
 }
+
 

@@ -12,14 +12,15 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+    <%= javascript_pack_tag 'charts' %>
     <div class="page-wrapper">
       <%= render 'shared/navbar' %>
       <%= render 'shared/flashes' %>
       <%= yield %>
     </div>
-      <%= render 'shared/footer' %>
+    <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
-    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js" %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
     <%= javascript_pack_tag "map" %>
     <%= javascript_pack_tag 'application' %>
   </body>
