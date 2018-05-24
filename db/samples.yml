@@ -1,5 +1,5 @@
 courses:
-  - title: Ruby Fundamentals
+  - title: Ruby
     description: >
         Ruby is a dynamic, thoroughly object oriented programming language with
         a focus on developer happiness and productivity. This course is designed
@@ -26,7 +26,7 @@ courses:
     begin_date: 2018-06-10
     end_date: 2018-06-20
     price: 755.00
-  - title: React.js - Getting Started
+  - title: React.js
     description: >
         This course covers the basics of React.js and prepares the student to
         start developing web applications with the library. React.js is a an
@@ -39,20 +39,18 @@ courses:
     begin_date: 2018-09-01
     end_date: 2018-09-13
     price: 450.00
-  - title: React.js - Getting Started
+  - title: PostgreSQL
     description: >
-        This course covers the basics of React.js and prepares the student to
-        start developing web applications with the library. React.js is a an
-        open-source JavaScript library for creating user interfaces with a
-        focus on the UI that's abstracted from the DOM, and a one-way reactive
-        data flow. The course will explain using an example web application how
-        o use React.js. The application will be a simple in-browser, math skills
-        kids' game.
+        PostgreSQL is commonly known as Postgres and is is often referred to as a
+        the world's most advanced open source database. In this course, we will go
+        over the basics of the PostgreSQL. We will cover topics ranging from installations,
+        to writing basic queries and retrieving data from tables. We will also explore the
+        logic of join, and a few best practices.
     address: 15 Rue de l'Église, 75015 Paris
     begin_date: 2018-09-01
     end_date: 2018-09-13
     price: 450.00
-  - title: JavaScript for beginners
+  - title: JavaScript
     description: >
         Want to learn to program and use JavaScript as the language of exploration?
         Great idea! JavaScript is uniquely one of the easiest languages to get started
@@ -63,15 +61,19 @@ courses:
     begin_date: 2018-09-01
     end_date: 2018-09-13
     price: 450.00
-  - title: React.js - Getting Started
+  - title: MongoDB
     description: >
-        This course covers the basics of React.js and prepares the student to
-        start developing web applications with the library. React.js is a an
-        open-source JavaScript library for creating user interfaces with a
-        focus on the UI that's abstracted from the DOM, and a one-way reactive
-        data flow. The course will explain using an example web application how
-        o use React.js. The application will be a simple in-browser, math skills
-        kids' game.
+        Learn how to effectively administer MongoDB in production. This course takes
+        you through the basics and then dives deep into all aspects of managing MongoDB.
+        It covers basics such as installation and configuration. Basic data backup and
+        recovery, importing, and exporting data will be explored. It shows you how to
+        create and manage replica sets - Mongo's mechanism for availability and durability.
+        It will teach you how Mongo scales out using sharding. The course also dives into
+        indexing and performance tuning and what tools and techniques you can use to make
+        your production deployment run smoothly and predictably. We will cover issues of
+        security, hardware selection, and other miscellaneous subjects you may run into
+        during operation. If you are considering - or already are - running MongoDB in
+        production, then this course is for you!
     address: 22 Rue des cinq Diamants, 75013 Paris
     begin_date: 2018-09-01
     end_date: 2018-09-13
@@ -94,7 +96,7 @@ courses:
     begin_date: 2018-08-01
     end_date: 2018-08-02
     price: 120.00
-  - title: A Better CSS (LESS and SASS)
+  - title: LESS and SASS
     description: >
         CSS is a great way to separate your design and markup during HTML development,
         but there are key pain points that make it more difficult than it should be.
@@ -116,7 +118,7 @@ courses:
     begin_date: 2018-08-03
     end_date: 2018-08-16
     price: 227.00
-  - title: Designing Schema for Elasticsearch
+  - title: Elasticsearch
     description: >
         You can get better search results beyond the basic out-of-the-box search
         experience with Elasticsearch. In this course, Designing Schema for
@@ -135,7 +137,7 @@ courses:
     begin_date: 2018-09-04
     end_date: 2018-09-15
     price: 1227.00
-  - title: Responsive Web Design
+  - title: Web Design
     description: >
         This course was designed to teach you to create a web page that can
         adapt it's layout to fit on any screen sizes across devices, as well as
@@ -154,7 +156,7 @@ courses:
     begin_date: 2018-06-23
     end_date: 2018-06-27
     price: 399.99
-  - title: Ruby Beyond the Basics
+  - title: Ruby and Beyond
     description: >
         This course is about three big ideas in Ruby: object-oriented programming,
         functional programming, and metaprogramming. Understanding how these ideas
@@ -164,7 +166,7 @@ courses:
     begin_date: 2018-07-02
     end_date: 2018-07-12
     price: 342.00
-  - title: Test-driven Rails with RSpec
+  - title: Rails with RSpec
     description: >
         Learn how to test-drive your Rails application from scratch. This course
         covers everything you need to start your TDD journey: you'll learn the main

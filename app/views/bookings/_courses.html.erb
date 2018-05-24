@@ -1,25 +1,30 @@
-<h1 class="text-center">My courses (<%= @courses.size %>)</h1>
+<div class="title-wrapper">
+  <h1 class="text-center">My courses (<%= @courses.size %>)</h1>
+</div>
 
 <% @courses.each do |course| %>
-  <h2><%= course.title %></h2>
-  <p>Candidates list</p>
-  <% course.bookings.each do |booking| %>
-    <div class="kudoz">
-      <div class="kudoz-right">
-        <%= cl_image_tag booking.user.avatar, class: "avatar" %>
-        <p>
-          <%= booking.user.first_name %>, <%= booking.user.email %>
-        </p>
+  <h2>Candidates list for your <%= course.title %> course</h2>
+  <% if course.bookings.size > 0 %>
+    <% course.bookings.each do |booking| %>
+      <div class="kudoz">
+        <div class="kudoz-right">
+          <%= cl_image_tag booking.user.avatar, class: "avatar" %>
+          <p>
+            <%= booking.user.first_name %>, <%= booking.user.email %>
+          </p>
+        </div>
+        <div class="kudoz-left">
+          <% if booking.approved? %>
+            <%= button_to 'Remove student', update_approved_booking_path(booking), method: :post,
+            class: "btn btn-danger" %>
+          <% else %>
+            <%= button_to 'Approve student', update_approved_booking_path(booking), method: :post,
+            class: "btn btn-success" %>
+          <% end %>
+        </div>
       </div>
-      <div class="kudoz-left">
-        <% if booking.approved? %>
-          <%= button_to 'Remove student', update_approved_booking_path(booking), method: :post,
-          class: "btn btn-danger" %>
-        <% else %>
-          <%= button_to 'Approve student', update_approved_booking_path(booking), method: :post,
-          class: "btn btn-success" %>
-        <% end %>
-      </div>
-    </div>
+    <% end %>
+  <% else %>
+    <p>Sorry but you don't have any candidates yet</p>
   <% end %>
 <% end %>
