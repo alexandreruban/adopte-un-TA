@@ -11,6 +11,11 @@ class CoursesController < ApplicationController
     @same_courses = Course.where(title: @course.title).reject { |c| c == @course }
     @other_courses = Course.where(user: @course.user).reject { |c| c == @course }
     @booking = Booking.where(user_id: current_user.id, course_id: params[:id]).first
+    @markers = [ {
+      lat: @course.latitude,
+      lng: @course.longitude,
+      infoWindow: { content: render_to_string(partial: "/courses/map_box", locals: { course: @course }) }
+    } ]
   end
 
   def new
