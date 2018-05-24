@@ -21,6 +21,7 @@ module AdopteUnTa
     # the framework and any gems in your application.
   end
 
-  # OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE if Rails.env.development?
+  OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE if Rails.env.development?
 
 end
+
