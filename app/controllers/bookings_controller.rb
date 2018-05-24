@@ -26,7 +26,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
     if @booking.save
-      redirect_to bookings_path
+      redirect_to my_bookings_bookings_path
     else
       flash[:alert] = "An error occured"
       redirect_to course_path(@course)
@@ -38,7 +38,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.destroy
     flash[:notice] = "Booking successfully deleted"
-    redirect_to bookings_path
+    redirect_to my_bookings_bookings_path
   end
 
   def update_approved

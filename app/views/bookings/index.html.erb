@@ -19,11 +19,19 @@
       <div class="dash-card-content">
         <i class="fas fa-chalkboard card-icon"></i>
         <p class="metrics"><%= @courses_given %></p>
-        <h3>Courses given</h3>
+        <h3>Total number of students</h3>
       </div>
     </div>
     <div class="dash-graph dash-card">
-
+      <%= column_chart Booking.joins(:course)
+        .where(approved: true)
+        .group(:begin_date)
+        .sum(:price), {
+          xtitle: "Course start date",
+          ytitle: "Revenue",
+          discrete: true
+        }
+      %>
     </div>
   </div>
 </div>
