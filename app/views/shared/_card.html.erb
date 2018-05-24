@@ -8,13 +8,16 @@
   <div class="course-card-body">
     <div class="cardridge">
       <div class="left-cardridge">
-        <h6><%= course.title %></h6>
-        <p><%= course.user.first_name %> <%= course.user.last_name%>
+        <%= cl_image_tag course.user.avatar, class:"course-card-details-user" %>
+        <div>
+          <h6><%= course.title %></h6>
+          <p><%= course.user.first_name %> <%= course.user.last_name%>
+        </div>
+        </div>
+        <div class="rigth-cardridge">
+          <p> <%= course.price %> € </p>
+        </div>
       </div>
-      <div class="rigth-cardridge">
-        <p> <%= course.price %> € </p>
-      </div>
+      <%= link_to "BOOK ME", course_path(course), class:"button" %>
     </div>
-    <%= link_to "BOOK ME", course_path(course), class:"button" %>
   </div>
-</div>

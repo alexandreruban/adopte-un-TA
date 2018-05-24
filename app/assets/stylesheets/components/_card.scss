@@ -22,6 +22,10 @@
   padding: 0px 24px;
   align-items: center;
 }
+.course-card-body .left-cardridge {
+  display: flex;
+  align-items: center;
+}
 .course-card-body .left-cardridge h6 {
   color: black;
   font-weight: 900;
@@ -50,7 +54,12 @@
 .course-card .button:hover {
   opacity: 0.8;
 }
-
+.course-card-details-user {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 14px;
+}
 .card {
   height: 280px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
