@@ -1,19 +1,21 @@
 .dashboard {
   display: flex;
+  position: relative;
+  min-height: calc(100vh - 70px);
   // --> Side bar
   .dash-sidebar {
     background-color: white;
-    position: fixed;
-    top: 70px;
-    left: 0;
-    bottom: 50px;
-    // height: calc(100vh - 120px);
-    width: 300px;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    bottom: 2rem;
+    width: calc(300px - 2rem);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     padding: 1rem 0;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
   }
   // Profile
   .dash-profile {
@@ -98,7 +100,13 @@
   }
   // Main dash
   .main-dash {
-    margin-left: 300px;
-    width: 100%;
+    position: absolute;
+    left: calc(300px + 2rem);
+    top: 2rem;
+    right: 2rem;
+    bottom: 2rem;
+  }
+  h2 {
+    font-weight: lighter;
   }
 }
