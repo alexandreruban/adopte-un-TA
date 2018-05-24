@@ -4,6 +4,7 @@
   min-height: calc(100vh - 70px);
   // --> Side bar
   .dash-sidebar {
+    flex-shrink: 0;
     background-color: white;
     position: absolute;
     top: 2rem;
