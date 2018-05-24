@@ -12,16 +12,31 @@
   <hr>
   <div class="dash-actions">
     <div class="action-link">
-      <%= link_to '', bookings_path, class: "absolute-link" %>
-      <span class="active"><i class="fas fa-edit"></i> My statistics</span>
+      <%= link_to '', bookings_path({ active: "statistics" }), class: "absolute-link" %>
+      <% if params[:active] == "statistics" %>
+        <span class="active">
+      <% else %>
+        <span>
+      <% end %>
+        <i class="fas fa-edit"></i> My statistics</span>
     </div>
     <div class="action-link">
-      <%= link_to '', my_bookings_bookings_path, class: "absolute-link" %>
-      <span><i class="fas fa-edit"></i> My bookings</span>
+      <%= link_to '', my_bookings_bookings_path({ active: "bookings" }), class: "absolute-link" %>
+      <% if params[:active] == "bookings" %>
+        <span class="active">
+      <% else %>
+        <span>
+      <% end %>
+      <i class="fas fa-edit"></i> My bookings</span>
     </div>
     <div class="action-link">
-      <%= link_to '', my_courses_bookings_path, class: "absolute-link" %>
-      <span><i class="fas fa-edit"></i> My courses</span>
+      <%= link_to '', my_courses_bookings_path({ active: "courses" }), class: "absolute-link" %>
+      <% if params[:active] == "courses" %>
+        <span class="active">
+      <% else %>
+        <span>
+      <% end %>
+      <i class="fas fa-edit"></i> My courses</span>
     </div>
   </div>
   <hr>
