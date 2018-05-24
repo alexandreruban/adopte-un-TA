@@ -1,5 +1,9 @@
 <div class="course-card">
+  <% if course.photo.url != nil %>
+  <div class="course-card-img-top" style="background-image: url('<%= cl_image_path course.photo %>')">
+  <% else %>
   <div class="course-card-img-top" style="background-image: url('<%= asset_path "course.jpg"%>')">
+  <% end %>
   </div>
   <div class="course-card-body">
     <div class="cardridge">
