@@ -23,7 +23,11 @@
       </div>
     </div>
     <div class="dash-graph dash-card">
-      <%= column_chart Booking.group_by_day_of_week(:created_at, format: "%a").count %>
+      <%= column_chart Booking.joins(:course)
+        .where(approved: true)
+        .group(:begin_date)
+        .sum(:price)
+      %>
     </div>
   </div>
 </div>

@@ -12,6 +12,7 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+    <%= javascript_pack_tag 'charts' %>
     <div class="page-wrapper">
       <%= render 'shared/navbar' %>
       <%= render 'shared/flashes' %>
@@ -20,6 +21,5 @@
     <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
-    <%= javascript_pack_tag 'charts' %>
   </body>
 </html>
