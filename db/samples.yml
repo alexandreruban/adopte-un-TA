@@ -1,0 +1,183 @@
+courses:
+  - title: Ruby
+    description: >
+        Ruby is a dynamic, thoroughly object oriented programming language with
+        a focus on developer happiness and productivity. This course is designed
+        to give you everything you need to start developing software in Ruby quickly.
+        You will learn about all of the key features of the language: classes,
+        methods, blocks, modules. You will find out about some of the standard
+        types included in Ruby, such as strings, arrays, hashes and regular
+        expressions. You will also get an introduction to tools and techniques you
+        need to write real world software, including testing, debugging and
+        packaging your code.
+    address: 10 rue de la Paix, Paris
+    begin_date: 2018-05-30
+    end_date: 2018-06-12
+    price: 350.00
+  - title: Ruby on Rails
+    description: >
+        Using an example web application, this course demonstrates how to use Rails'
+        latest features. The application is a simplified Q&A site for the history of
+        the universe. Users can post questions about the universe and other users will
+        be able to reply. We will talk about controllers, views, models, migrations,
+        emails, background jobs, the asset pipeline, and a few other things. We will
+        also learn how to deploy a Rails application to the cloud.
+    address: 10 avenue du Maine, Paris
+    begin_date: 2018-06-10
+    end_date: 2018-06-20
+    price: 755.00
+  - title: React.js
+    description: >
+        This course covers the basics of React.js and prepares the student to
+        start developing web applications with the library. React.js is a an
+        open-source JavaScript library for creating user interfaces with a
+        focus on the UI that's abstracted from the DOM, and a one-way reactive
+        data flow. The course will explain using an example web application how
+        o use React.js. The application will be a simple in-browser, math skills
+        kids' game.
+    address: 74 Boulevard Garibaldi, 75015 Paris
+    begin_date: 2018-09-01
+    end_date: 2018-09-13
+    price: 450.00
+  - title: PostgreSQL
+    description: >
+        PostgreSQL is commonly known as Postgres and is is often referred to as a
+        the world's most advanced open source database. In this course, we will go
+        over the basics of the PostgreSQL. We will cover topics ranging from installations,
+        to writing basic queries and retrieving data from tables. We will also explore the
+        logic of join, and a few best practices.
+    address: 15 Rue de l'Église, 75015 Paris
+    begin_date: 2018-09-01
+    end_date: 2018-09-13
+    price: 450.00
+  - title: JavaScript
+    description: >
+        Want to learn to program and use JavaScript as the language of exploration?
+        Great idea! JavaScript is uniquely one of the easiest languages to get started
+        with and one of the most powerful. It will challenge you to learn more even
+        years or decades after you start. Follow along with the course (and learn more
+        about JavaScript) using materials at https://github.com/getify/You-Dont-Know-JS.
+    address: Plaine-Monceau, 75017 Paris
+    begin_date: 2018-09-01
+    end_date: 2018-09-13
+    price: 450.00
+  - title: MongoDB
+    description: >
+        Learn how to effectively administer MongoDB in production. This course takes
+        you through the basics and then dives deep into all aspects of managing MongoDB.
+        It covers basics such as installation and configuration. Basic data backup and
+        recovery, importing, and exporting data will be explored. It shows you how to
+        create and manage replica sets - Mongo's mechanism for availability and durability.
+        It will teach you how Mongo scales out using sharding. The course also dives into
+        indexing and performance tuning and what tools and techniques you can use to make
+        your production deployment run smoothly and predictably. We will cover issues of
+        security, hardware selection, and other miscellaneous subjects you may run into
+        during operation. If you are considering - or already are - running MongoDB in
+        production, then this course is for you!
+    address: 22 Rue des cinq Diamants, 75013 Paris
+    begin_date: 2018-09-01
+    end_date: 2018-09-13
+    price: 450.00
+  - title: Improving CSS
+    description: >
+        In case you're unaware, CSS by itself is not very dynamic. There's no
+        support for variables and functions, and dealing with vendor prefixes
+        can be a nightmare! In this course, Improving CSS with Stylus, you'll
+        learn how Stylus solves all of this and more. You can declare variables,
+        functions, mixins, and even improve the visibility of your CSS without
+        having to include colons, semi-colons, and braces. First, you're going
+        to learn how to integrate Stylus within your development environment.
+        Then, you will take a close look at Stylus from a beginner's level all
+        the way up to an advanced level. Finally, you will create your very own
+        project so that you can gain meaningful experience by using Stylus. After
+        watching this course, you'll be ready to starting using Stylus to improve
+        your workflow.
+    address: 11-1 Villa Thoreton, 75015 Paris
+    begin_date: 2018-08-01
+    end_date: 2018-08-02
+    price: 120.00
+  - title: LESS and SASS
+    description: >
+        CSS is a great way to separate your design and markup during HTML development,
+        but there are key pain points that make it more difficult than it should be.
+        Dynamic stylesheet languages like LESS and SASS can make style sheets more
+        readable, maintainable, and easier to write. This course dives into both LESS
+        and SASS and shows you how powerful these languages can be.
+    address: 37-23 Rue Bonaparte, 75006 Paris
+    begin_date: 2018-07-22
+    end_date: 2018-07-24
+    price: 350.00
+  - title: Sinatra In-Depth
+    description: >
+        I walk you through Sinatra, the lightweight Ruby web framework. Along
+        the way you'll get to know Vim, HAML, and MongoDB as Rob rebuilds the
+        MVC Music Store completely with Sinatra. "Understanding Rack" is
+        bundled with this production and is Episode 2. The code for this
+        production is up at https://github.com/tekpub/Sinatra-Music-Store
+    address: 19-1 Rue Montgallet, 75012 Paris
+    begin_date: 2018-08-03
+    end_date: 2018-08-16
+    price: 227.00
+  - title: Elasticsearch
+    description: >
+        You can get better search results beyond the basic out-of-the-box search
+        experience with Elasticsearch. In this course, Designing Schema for
+        Elasticsearch, you will learn how to configure indexes to get more nuanced
+        d meaningful search results. First, you will use dynamic and explicit mapping
+        hich allows you to specify field types within your document, which in turn
+        determines how they are indexed and searched. Next, you will learn how you can
+        map relationships and hierarchies from the traditional RDBMS world to the flat
+        orld of Elasticsearch. Finally, you will see Elasticsearch's special features,
+        working with geospatial data such as GPS, and time-based data such as log files,
+        and also aliasing indices to share them across multiple users for a better
+        search experience. At the end of this course, you will have hands-on experience
+        signing your Elasticsearch indexes and mappings to work well with different
+        kinds of data, such as hierarchical, geospatial, or time-based data.
+    address: St Thomas d'Aquin, Paris
+    begin_date: 2018-09-04
+    end_date: 2018-09-15
+    price: 1227.00
+  - title: Web Design
+    description: >
+        This course was designed to teach you to create a web page that can
+        adapt it's layout to fit on any screen sizes across devices, as well as
+        n paper when printed. Web design requires the coordination of HTML, CSS,
+        and graphics in order to construct a layout and design that can respond to
+        e varying needs of your websites visitors. In this step-by-step course,
+        Creating a Responsive Web Design, you'll learn every aspect of converting a
+        design into a fully functioning web page. You'll create navigation menus,
+        style typography, format and position graphics, create CSS animations, import
+        free web fonts from Google, as well adjust your layout to fit a wide range of
+        screens and devices. For those new to HTML, CSS or web graphics, you'll see a
+        few modules explaining the core fundamentals of each, so you'll be able to work
+        rough the course without missing a beat. Software required: Text Editor, Web
+        Browser, Tablet or Phone (optional), Printer (optional).
+    address: 17-15 Rue de l'Yvette, 75016 Paris
+    begin_date: 2018-06-23
+    end_date: 2018-06-27
+    price: 399.99
+  - title: Ruby and Beyond
+    description: >
+        This course is about three big ideas in Ruby: object-oriented programming,
+        functional programming, and metaprogramming. Understanding how these ideas
+        are implemented in Ruby, and how they can be combined, will unleash the full
+        power of the language.
+    address: 88 Rue Monge, 75005 Paris
+    begin_date: 2018-07-02
+    end_date: 2018-07-12
+    price: 342.00
+  - title: Rails with RSpec
+    description: >
+        Learn how to test-drive your Rails application from scratch. This course
+        covers everything you need to start your TDD journey: you'll learn the main
+        principles behind test-driven development, and you'll see how to write
+        acceptance, controller, and model specs. You'll also learn how to use Factory
+        Girl gem to prepare data for your specs and how to test most common cases
+        in web development. By the end of this course, you'll see how all these
+        parts come together while we test-drive features for real Rails applications.
+    address: 4-28 Rue de Cherbourg, 75015 Paris
+    begin_date: 2018-08-23
+    end_date: 2018-08-27
+    price: 450.00
+
+

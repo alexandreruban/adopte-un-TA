@@ -103,26 +103,21 @@ urls = ['http://res.cloudinary.com/de7jtv0ha/image/upload/v1527072488/9978111.jp
         'http://res.cloudinary.com/de7jtv0ha/image/upload/v1527073383/33979976.jpg',
         ]
 
+users = []
 users_attributes.each_with_index do |user, index|
   user = User.new(user)
   user.remote_avatar_url = urls[index]
   user.save!
+  users << user;
 end
 
-puts "Creating new courses..."
-puts "5 users will have between 1 and 3 courses..."
-users_with_courses = User.take(5)
-users_with_courses.each do |user|
-  (1..3).to_a.sample.times do
-    user.courses.create({
-      title: Faker::ProgrammingLanguage.name,
-      description: Faker::Lorem.paragraph,
-      address: Faker::Address.street_address,
-      price: rand(30..50),
-      begin_date: Date.today,
-      end_date: Date.today
-    })
-  end
+file = "db/samples.yml"
+samples = YAML.load(open(file).read)
+
+puts "Creating #{samples["courses"].count} courses..."
+samples["courses"].each_with_index do |course|
+  teacher = users.sample      # A random teacher
+  teacher.courses.create!(course.slice("title", "description", "address", "begin_date", "end_date", "price"))
 end
 
 puts "Seeding finished!! :)"
