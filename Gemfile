@@ -23,7 +23,7 @@ gem 'cloudinary'
 gem 'faker'
 gem 'chartkick'
 gem 'groupdate'
-
+gem "geocoder"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
