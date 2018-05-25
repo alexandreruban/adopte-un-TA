@@ -1,11 +1,22 @@
 <%= simple_form_for course do |f| %>
 <%= f.input :title %>
 <%= f.input :description %>
-<%= f.input :address %>
-<%= f.input :begin_date %>
-<%= f.input :end_date %>
+
+<%= f.input :address, id:"course_address" %>
+<%= f.input :begin_date, as: :string, required: false, input_html: { id: "range_start" } %>
+<%= f.input :end_date, as: :string, required: false, input_html: { id: "range_end" } %>
+
 <%= f.input :price %>
 <%= image_tag(course.photo_url) if course.photo? %>
+<!-- <div class="form-group file optional course_photo">
+  <div class="label-container">
+    <label class="file optional" for="course_photo">
+      <i class="fas fa-cloud-upload-alt"></i>
+      <span>Choose an optional photo for your course</span>
+    </label>
+    <input class="form-control-file file optional" type="file" name="course[photo]" id="course_photo">
+  </div>
+</div> -->
 <%= f.input :photo %>
 <%= f.hidden_field :photo_cache %>
 <%= f.submit class:"btn red-button lg" %>

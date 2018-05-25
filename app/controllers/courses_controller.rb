@@ -4,6 +4,25 @@ class CoursesController < ApplicationController
 
   def index
     @courses = policy_scope(Course)
+    @courses = policy_scope(Course)
+      if params[:query].present?
+        sql_query = " \
+        courses.title ILIKE :query \
+        OR courses.description ILIKE :query \
+        OR users.first_name ILIKE :query \
+        OR users.last_name ILIKE :query \
+        "
+        @courses = Course.joins(:user).where(sql_query, query: "%#{params[:query]}%")
+      else
+        @courses = Course.all
+      end
+    @markers = @courses.where.not(latitude: nil, longitude: nil).map do |course|
+      {
+        lat: course.latitude,
+        lng: course.longitude,
+        infoWindow: { content: render_to_string(partial: "/courses/map_box", locals: { course: course }) }
+      }
+    end
   end
 
   def show

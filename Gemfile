@@ -21,6 +21,7 @@ gem 'webpacker'
 gem 'carrierwave', '~> 1.2.2'
 gem 'cloudinary'
 gem 'faker'
+gem 'omniauth-github'
 gem 'chartkick'
 gem 'groupdate'
 gem "geocoder"

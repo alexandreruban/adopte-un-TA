@@ -1,7 +1,6 @@
 .course-grid-margin {
   margin: 14px 0px;
 }
-
 .course-card {
   height: 280px;
   margin: 2px 2px 10px 2px;
@@ -115,7 +114,6 @@
   font-size: 23px;
   text-transform: uppercase;
   font-weight: bold;
-
 }
 .card-description {
   position: absolute;
@@ -123,9 +121,6 @@
   left: 35px;
   margin: 10px;
 }
-
-
-
 .card-description h2 {
   font-size: 24px;
 }
@@ -147,9 +142,7 @@
 .card-link:hover {
   opacity: 0.1;
 }
-
 .cta {
-  // background-image: linear-gradient(rgba(0,0,0,0.1), rgba(255,127,80,0.5));
   background-color: $orange;
 }
 
