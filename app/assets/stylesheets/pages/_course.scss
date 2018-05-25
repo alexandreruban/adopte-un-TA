@@ -1,6 +1,10 @@
 .main-container {
   display: flex;
 }
+#course-card-container {
+  width: 714px;
+  flex-shrink: 0px;
+}
 #course-map-container {
   flex: 0 0 400px;
   position: sticky !important; /* !important to override Gmaps inline CSS */
