@@ -48,26 +48,38 @@ class CoursesController < ApplicationController
   def update
     authorize @course
     @course.update(course_params)
+    @course.save
     if @course.save
-      redirect_to course_path(@course)
+      respond_to do |format|
+        format.html { redirect_to course_path(@course) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
-      render :edit
+      respond_to do |format|
+        format.html { render :edit }
+        format.js  # <-- idem
+      end
     end
-  end
+  #   if @course.save
+  #     redirect_to course_path(@course)
+  #   else
+  #     render :edit
+  #   end
+end
 
-  def destroy
-    authorize @course
-    @course.destroy
-    redirect_to courses_path
-  end
+def destroy
+  authorize @course
+  @course.destroy
+  redirect_to courses_path
+end
 
-  private
+private
 
-  def set_course
-    @course = Course.find(params[:id])
-  end
+def set_course
+  @course = Course.find(params[:id])
+end
 
-  def course_params
-    params.require(:course).permit(:title, :description, :address, :price, :begin_date, :end_date, :photo)
-  end
+def course_params
+  params.require(:course).permit(:title, :description, :address, :price, :begin_date, :end_date, :photo)
+end
 end
