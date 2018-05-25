@@ -6,6 +6,7 @@
   background: #971F53;
   transition: background 0.3s ease;
 }
+
 .red-button:hover {
   color: white;
 }
@@ -49,4 +50,23 @@ background-color: red;
 
 .margin-button {
   margin-top: 80px;
+}
+
+input[type="file"] {
+ display: none;
+}
+
+label.file {
+  background-color: white;
+  border-radius: $border-radius-base;
+  font-weight: normal;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  width: 100%;
+  opacity: 1;
+}
+
+label.file:hover {
+  opacity: 0.8;
 }
