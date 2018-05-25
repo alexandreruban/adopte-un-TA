@@ -1,4 +1,4 @@
 booking:
+  user: alex
   course: ruby_on_rails
-  user: seb
   approved: false

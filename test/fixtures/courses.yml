@@ -1,17 +1,17 @@
 ruby_on_rails:
+  user: seb
   title: ruby on rails
   description: learn ruby on rails with le wagon
   price: 50
   address: 16 villa gaudelet
   begin_date: <%= Date.today %>
   end_date: <%= Date.today + 1 %>
-  user: users(:seb)
 
 python:
+  user: seb
   title: python
   description: learn python with le wagon
   price: 40
   address: 16 villa gaudelet
   begin_date: <%= Date.today %>
   end_date: <%= Date.today + 1 %>
-  user: users(:seb)

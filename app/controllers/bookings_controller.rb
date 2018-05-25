@@ -42,9 +42,9 @@ class BookingsController < ApplicationController
   end
 
   def update_approved
-    booking = Booking.find(params[:id])
-    authorize booking
-    booking.update(approved: !booking.approved)
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.update(approved: !@booking.approved)
     redirect_to my_courses_bookings_path
   end
 end

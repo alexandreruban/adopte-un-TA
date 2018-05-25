@@ -1,29 +1,34 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-8">
-      <div class="details details-description">
-        <div class="card-body ">
-          <h1><%= @course.title %></h1>
-          <p><%= @course.description %></p>
-          <p>
-            <%= cl_image_tag @course.user.avatar, class:"details-user" %>
-            <strong><%= @course.user.first_name %> <%= @course.user.last_name %></strong>
-          </p>
-          <% if policy(@course).edit? %>
-          <%= link_to "Edit", edit_course_path(@course), class: "btn btn-primary"%>
-          <% end %>
-          <% if policy(@course).destroy? %>
-          <%= link_to "Delete",  course_path(@course), method: :delete, class: "btn btn-primary"%>
-          <% end %>
-
-        </div>
-      </div>
-    </div>
-    <div class="col-xs-12 col-md-4">
-      <div class="details details-call">
-        <div class="card-body">
-          <div id="map" style="width: 100%; height: 300px;" data-markers="<%= @markers.to_json %>">
+  <div class="main-container">
+    <div id="course-card-container">
+      <div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="details details-description">
+              <div class="card-body ">
+                <div class="course-card-user">
+                  <strong><%= @course.user.first_name %> <%= @course.user.last_name %></strong><%= cl_image_tag @course.user.avatar, class:"details-user" %>
+                </div>
+                <h1><%= @course.title %></h1>
+                <p><%= @course.description %></p>
+              </div>
+            </div>
           </div>
+        </div>
+        <% if @same_courses.any? %>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="details section">
+              <h3>Related courses <span class="details-h3-span">for <%= @course.title %></span></h3>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <% @same_courses.each do |course| %>
+          <div class="col-xs-12 ">
+            <%= render partial: 'shared/card', locals: { course: course } %>
+          </div>
+
           <p>
             From: <strong><%= @course.begin_date.strftime("%d of %B, %Y") %></strong>
             <br>
@@ -38,39 +43,63 @@
           </p>
         <div class="margin-button">
           <% if !(@course.user == current_user) %>
-          <% if @booking.nil?%>
-          <%= link_to "Book", course_bookings_path(@course), method: :post, class: "book-button" %>
-          <% else %>
-          <%= link_to "Cancel booking", booking_path(@booking), method: :delete, class: "book-button-cancel" %>
-          <% end %>
+            <% if @booking.nil?%>
+              <%= link_to "Book", course_bookings_path(@course), method: :post, class: "book-button" %>
+            <% else %>
+              <%= link_to "Cancel booking", booking_path(@booking), method: :delete, class: "book-button-cancel" %>
+            <% end %>
           <% end %>
         </div>
+        <% end %>
+        <% if @other_courses.any? %>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="details section">
+              <h3>Other courses <span class="details-h3-span">from <%= @course.user.first_name %> <%= @course.user.last_name %></span></h3>
+            </div>
+          </div>
         </div>
+        <div class="row">
+          <% @other_courses.each do |course| %>
+          <div class="col-xs-12 ">
+            <%= render partial: 'shared/card', locals: { course: course } %>
+          </div>
+          <% end %>
+        </div>
+        <% end %>
       </div>
     </div>
-  </div>
-  <% if @same_courses.any? %>
-  <div class="row">
-    <h3>Related courses <span class="details-h3-span">for <%= @course.title %></span></h3>
-  </div>
-  <div class="row">
-    <% @same_courses.each do |course| %>
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <%= render partial: 'shared/card', locals: { course: course } %>
+    <div id="course-map-container">
+     <div class="details details-call">
+      <div id="map" style="width: 100%; height: 300px;" data-markers="<%= @markers.to_json %>">
+      </div>
+      <p>
+        <i class="fas fa-map-marker-alt text-danger"></i>
+        <strong><%= @course.address %></strong>
+      </p>
+      <p>
+        From: <strong><%= @course.begin_date.strftime("%d of %B, %Y") %></strong>
+        <br>
+        To: <strong><%= @course.end_date.strftime("%d of %B, %Y") %></strong>
+      </p>
+      <p>
+        <strong><%= @course.price %> €</strong>
+      </p>
+      <% if !(@course.user == current_user) %>
+      <% if @booking.nil?%>
+      <%= link_to "Book", course_bookings_path(@course), method: :post, class: "global-button book-button" %>
+      <% else %>
+      <%= link_to "Cancel booking", booking_path(@booking), method: :delete, class: "global-button cancel-button" %>
+      <% end %>
+      <% else %>
+      <div>
+        <% if policy(@course).edit? %>
+        <%= link_to "Edit", edit_course_path(@course), class: "btn btn-lg btn-warning"%>
+        <% end %>
+        <% if policy(@course).destroy? %>
+        <%= link_to "Delete",  course_path(@course), method: :delete, class: "btn btn-lg btn-danger" %>
+        <% end %>
+      </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
-  <% end %>
-  <% if @other_courses.any? %>
-  <div class="row">
-    <h3>Other courses <span class="details-h3-span">from <%= @course.user.first_name %> <%= @course.user.last_name %></span></h3>
-  </div>
-  <div class="row">
-    <% @other_courses.each do |course| %>
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <%= render partial: 'shared/card', locals: { course: course } %>
-    </div>
-    <% end %>
-  </div>
-  <% end %>
-</div>

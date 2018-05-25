@@ -1,16 +1,35 @@
 class CoursesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :index ]
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_course, only: [:show, :edit, :update, :destroy]
 
   def index
     @courses = policy_scope(Course)
+    @courses = policy_scope(Course)
+      if params[:query].present?
+        sql_query = " \
+        courses.title ILIKE :query \
+        OR courses.description ILIKE :query \
+        OR users.first_name ILIKE :query \
+        OR users.last_name ILIKE :query \
+        "
+        @courses = Course.joins(:user).where(sql_query, query: "%#{params[:query]}%")
+      else
+        @courses = Course.all
+      end
+    @markers = @courses.where.not(latitude: nil, longitude: nil).map do |course|
+      {
+        lat: course.latitude,
+        lng: course.longitude,
+        infoWindow: { content: render_to_string(partial: "/courses/map_box", locals: { course: course }) }
+      }
+    end
   end
 
   def show
     authorize @course
     @same_courses = Course.where(title: @course.title).reject { |c| c == @course }
     @other_courses = Course.where(user: @course.user).reject { |c| c == @course }
-    @booking = Booking.where(user_id: current_user.id, course_id: params[:id]).first
+    @booking = Booking.where(user_id: current_user.id, course_id: params[:id]).first if current_user
     @markers = [ {
       lat: @course.latitude,
       lng: @course.longitude,

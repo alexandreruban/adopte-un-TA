@@ -5,23 +5,39 @@
   background: white;
   border-radius: 4px;
   box-shadow: 9px 9px 6px #ccc;
-
 }
-
+.section {
+  background-color: #e6e6e6;
+}
 .details-description {
   background: white;
 }
-
+.details-description p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+.course-card-user {
+  text-align: right;
+}
+.course-card-user img {
+  margin-left: 16px;
+}
 .details-user {
-  width: 40px;
-  height: 40px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
 }
 .details-call {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: white;
   text-align: center;
+  height: 540px;
 }
-
+.details-call p {
+  margin: 0px;
+}
 .details-h3-span {
   font-size:16px;
 }
