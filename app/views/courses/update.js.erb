@@ -1,0 +1,13 @@
+function refreshDescription() {
+  const descr_p = document.getElementById("descr_p");
+  const descr_form = document.getElementById("descr_form");
+  const descr_edit_btn = document.getElementById("descr_edit_btn");
+  descr_form.style.display = "none";
+  descr_p.innerHTML = '<%= j render "courses/description-p", course: @course %>'
+  descr_p.style.display = "block";
+  descr_edit_btn.style.display = "block";
+}
+
+<% unless @course.errors.any? %>
+  refreshDescription()
+<% end %>

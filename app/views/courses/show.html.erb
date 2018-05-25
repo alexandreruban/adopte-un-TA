@@ -10,7 +10,15 @@
                   <strong><%= @course.user.first_name %> <%= @course.user.last_name %></strong><%= cl_image_tag @course.user.avatar, class:"details-user" %>
                 </div>
                 <h1><%= @course.title %></h1>
-                <p><%= @course.description %></p>
+                <div id="descr_p">
+                  <%= render 'courses/description-p', course: @course %>
+                </div>
+                <div id="descr_form" style="display: none">
+                  <%= render 'courses/description-form', course: @course %>
+                </div>
+                <% if (@course.user == current_user) %>
+                  <i id="descr_edit_btn" class="fas fa-edit"></i>
+                <% end %>
               </div>
             </div>
           </div>
@@ -83,3 +91,4 @@
       <% end %>
     </div>
   </div>
+</div>
