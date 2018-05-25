@@ -1,0 +1,10 @@
+.main-container {
+  display: flex;
+}
+#course-map-container {
+  flex: 0 0 400px;
+  position: sticky !important; /* !important to override Gmaps inline CSS */
+  top: 70px !important;
+  height: 80vh;
+  margin-left: 26px;
+}
