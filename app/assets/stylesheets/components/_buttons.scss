@@ -6,10 +6,10 @@
   background: #971F53;
   transition: background 0.3s ease;
 }
+
 .red-button:hover {
   color: white;
 }
-
 
 .book-button {
   color: white;
@@ -47,5 +47,21 @@
   margin-top: 80px;
 }
 
-/* haut | droit | bas | gauche */
-// padding: 5px 1em 0 2em;
+input[type="file"] {
+ display: none;
+}
+
+label.file {
+  background-color: white;
+  border-radius: $border-radius-base;
+  font-weight: normal;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  width: 100%;
+  opacity: 1;
+}
+
+label.file:hover {
+  opacity: 0.8;
+}
