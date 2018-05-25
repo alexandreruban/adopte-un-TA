@@ -1,9 +1,11 @@
 <%= simple_form_for course do |f| %>
 <%= f.input :title %>
 <%= f.input :description %>
-<%= f.input :address %>
+
+<%= f.input :address, id:"course_address" %>
 <%= f.input :begin_date, as: :string, required: false, input_html: { id: "range_start" } %>
 <%= f.input :end_date, as: :string, required: false, input_html: { id: "range_end" } %>
+
 <%= f.input :price %>
 <%= image_tag(course.photo_url) if course.photo? %>
 <%= f.input :photo %>
