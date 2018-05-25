@@ -50,35 +50,35 @@
       </div>
     </div>
     <div id="course-map-container">
-     <div class="details details-call">
-      <div id="map" style="width: 100%; height: 300px;" data-markers="<%= @markers.to_json %>">
-      </div>
-      <p>
+      <div class="details details-call">
+        <div id="map" style="width: 100%; height: 300px;" data-markers="<%= @markers.to_json %>">
+        </div>
+        <p>
         <i class="fas fa-map-marker-alt text-danger"></i>
         <strong><%= @course.address %></strong>
-      </p>
-      <p>
+        </p>
+        <p>
         From: <strong><%= @course.begin_date.strftime("%d of %B, %Y") %></strong>
         <br>
         To: <strong><%= @course.end_date.strftime("%d of %B, %Y") %></strong>
-      </p>
-      <p>
+        </p>
+        <p>
         <strong><%= @course.price %> €</strong>
-      </p>
+        </p>
       <% if !(@course.user == current_user) %>
-      <% if @booking.nil?%>
-      <%= link_to "Book", course_bookings_path(@course), method: :post, class: "global-button book-button" %>
+        <% if @booking.nil?%>
+        <%= link_to "Book", course_bookings_path(@course), method: :post, class: "global-button book-button" %>
+        <% else %>
+        <%= link_to "Cancel booking", booking_path(@booking), method: :delete, class: "global-button cancel-button" %>
+          <% end %>
       <% else %>
-      <%= link_to "Cancel booking", booking_path(@booking), method: :delete, class: "global-button cancel-button" %>
-      <% end %>
-      <% else %>
-      <div>
-        <% if policy(@course).edit? %>
-        <%= link_to "Edit", edit_course_path(@course), class: "btn btn-lg btn-warning"%>
-        <% end %>
-        <% if policy(@course).destroy? %>
-        <%= link_to "Delete",  course_path(@course), method: :delete, class: "btn btn-lg btn-danger" %>
-        <% end %>
+        <div>
+          <% if policy(@course).edit? %>
+          <%= link_to "Edit", edit_course_path(@course),class: "btn btn-lg btn-warning"%>
+          <% end %>
+          <% if policy(@course).destroy? %>
+          <%= link_to "Delete",  course_path(@course), method: :delete, class: "btn btn-lg btn-danger" %>
+          <% end %>
       </div>
       <% end %>
     </div>
