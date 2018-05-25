@@ -1,26 +1,22 @@
 <div class="container">
   <div class="row">
-      <% if @courses.length == 0 %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="course-grid-margin">
-        <%= render partial: 'shared/cta_card' %>
-        </div>
-      </div>
-      <% else %>
-      <% @courses.each_with_index do |course, index| %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="course-grid-margin">
-          <%= render partial: 'shared/card', locals: { course: course } %>
-        </div>
-      </div>
-      <% if index == [1, @courses.length - 1].min %>
-      <div class="col-xs-12 col-sm-4">
-          <div class="course-grid-margin">
-          <%= render partial: 'shared/cta_card' %>
-          </div>
-      </div>
-      <% end %>
-      <% end %>
-    <% end %>
+    <div class="col-xs-12 col-sm-8">
+      <div class="course-grid-margin">
+        <div id="map" class="details" style="height: 280px;" data-markers="<%= @markers.to_json %>">
+       </div>
+     </div>
+   </div>
+   <div class="col-xs-12 col-sm-4">
+    <div class="course-grid-margin">
+      <%= render partial: 'shared/cta_card' %>
+    </div>
   </div>
+  <% @courses.each_with_index do |course, index| %>
+  <div class="col-xs-12 col-sm-4">
+    <div class="course-grid-margin">
+      <%= render partial: 'shared/card', locals: { course: course } %>
+    </div>
+  </div>
+  <% end %>
+</div>
 </div>

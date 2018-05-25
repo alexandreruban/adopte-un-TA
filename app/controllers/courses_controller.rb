@@ -4,6 +4,13 @@ class CoursesController < ApplicationController
 
   def index
     @courses = policy_scope(Course)
+    @markers = @courses.where.not(latitude: nil, longitude: nil).map do |course|
+      {
+        lat: course.latitude,
+        lng: course.longitude,
+        infoWindow: { content: render_to_string(partial: "/courses/map_box", locals: { course: course }) }
+      }
+    end
   end
 
   def show
