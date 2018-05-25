@@ -1,0 +1,6 @@
+<%= simple_form_for([@course], remote: true) do |f| %>
+<%= f.input :description, :input_html => {:rows => 8}, label: false %>
+<%= button_tag "Hello", type: "submit" do %>
+  <i class="fas fa-check"></i>
+<% end %>
+<% end %>
