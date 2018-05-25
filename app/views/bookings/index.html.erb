@@ -23,8 +23,8 @@
       </div>
     </div>
     <div class="dash-graph dash-card">
-      <%= column_chart Booking.joins(:course)
-        .where(approved: true)
+      <%= column_chart Booking.joins(course: :user)
+        .where("bookings.approved = ? AND users.id = ?", true, current_user.id)
         .group(:begin_date)
         .sum(:price), {
           xtitle: "Course start date",

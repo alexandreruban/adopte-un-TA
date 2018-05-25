@@ -28,6 +28,26 @@
           <div class="col-xs-12 ">
             <%= render partial: 'shared/card', locals: { course: course } %>
           </div>
+
+          <p>
+            From: <strong><%= @course.begin_date.strftime("%d of %B, %Y") %></strong>
+            <br>
+            To: <strong><%= @course.end_date.strftime("%d of %B, %Y") %></strong>
+          </p>
+          <p>
+            <i class="fa fa-map-marker" aria-hidden="true"></i>
+            <strong><%= @course.address %></strong>
+          </p>
+          <p>
+            <strong><%= @course.price %> €</strong>
+          </p>
+        <div class="margin-button">
+          <% if !(@course.user == current_user) %>
+            <% if @booking.nil?%>
+              <%= link_to "Book", course_bookings_path(@course), method: :post, class: "book-button" %>
+            <% else %>
+              <%= link_to "Cancel booking", booking_path(@booking), method: :delete, class: "book-button-cancel" %>
+            <% end %>
           <% end %>
         </div>
         <% end %>
